@@ -1,5 +1,5 @@
-require_relative 'BaseController'
-require_relative '../models/User'
+require 'controllers/BaseController'
+require 'models/User'
 require 'json'
 
 module Controllers
@@ -15,9 +15,14 @@ module Controllers
         json status: 'error',
              message: 'Invalid Login'
       else
-        session['username'] = user.email
+        session[:username] = user.email
         { :status => 'ok' }.to_json
       end
+    end
+    
+    delete '/' do
+      session[:username] = nil
+      { :status => 'ok' }.to_json
     end
 
   end

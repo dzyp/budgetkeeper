@@ -1,4 +1,5 @@
-require_relative 'BaseController'
+$LOAD_PATH << './lib'
+require 'controllers/BaseController'
 
 module Controllers
   class MainController < BaseController

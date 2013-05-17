@@ -1,5 +1,6 @@
-require_relative 'BaseController'
-require_relative '../models/User'
+$LOAD_PATH << './lib'
+require 'controllers/BaseController'
+require 'models/User'
 
 module Controllers
   class UserController < BaseController

@@ -16,6 +16,30 @@ map '/user' do
     run Controllers::UserController
 end
 
+map '/userpreferences' do
+    run Controllers::UserPreferencesController
+end
+
+map '/expensetype' do
+    run Controllers::ExpenseTypeController
+end
+
+map '/expensetypes' do
+    run Controllers::ExpenseTypesController
+end
+
+map '/expense' do
+    run Controllers::ExpenseController
+end
+
+map '/expenses' do
+    run Controllers::ExpensesController
+end
+
 map '/test' do
     run Controllers::TestController
+end
+
+map '/tests' do
+    run Controllers::TestsController
 end

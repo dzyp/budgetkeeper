@@ -1,6 +1,7 @@
+$LOAD_PATH << './lib'
 require 'json'
-require_relative 'BaseController'
-require_relative '../helpers/SessionHelpers'
+require 'controllers/BaseController'
+require 'helpers/SessionHelpers'
 
 module Controllers
   class BaseRestrictedController < BaseController
@@ -15,6 +16,10 @@ module Controllers
     
     def expected_role
       USER
+    end
+    
+    configure do
+      disable :protection
     end
     
     before do

@@ -1,5 +1,8 @@
+$LOAD_PATH << './lib'
 require 'mongoid'
 require 'bcrypt'
+require 'models/UserPreferences'
+require 'models/Expense'
 
 module Models
   class User
@@ -14,6 +17,9 @@ module Models
     field :password_hash, type: String
     field :access_token, type: String
 
+    embeds_one :user_preference, autobuild: true
+    has_many :expenses
+    
     validates_confirmation_of :password
     validates_presence_of :password, :on => :create
     validates_presence_of :email
@@ -58,4 +64,6 @@ module Models
     end
 
   end
+  
+  
 end
